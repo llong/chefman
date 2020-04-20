@@ -1,0 +1,47 @@
+{
+  "recipe": "Spaghetti With Italian Sausage",
+  "coverPhotoUri": "http://www.savvyinthekitchen.com/wp-content/uploads/2016/01/sausage-spaghetti10done.jpg",
+  "ingredients": [
+    {
+      "id": 1,
+      "name": "spaghetti noodles",
+      "price": 1.99,
+      "image": "http://i2.wp.com/farm4.static.flickr.com/3518/3273222093_3e6d1ef411.jpg?resize%3D500%2C333"
+    },
+    {
+      "id": 2,
+      "name": "Italian Sausage (6 Links)",
+      "price": 5.25,
+      "image": "https://i.ytimg.com/vi/hZ9qTxE7qK8/hqdefault.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Garlic (5 Cloves)",
+      "price": 3.99,
+      "image": "https://s3.amazonaws.com/cdn.gurneys.com/images/475/09491.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Extra Virgin Olive Oil",
+      "price": 16.99,
+      "image": "https://panlasangpinoy.com/wp-content/uploads/2014/10/olive-oil.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Parmesan Cheese",
+      "price": 8.99,
+      "image": "https://i.ndtvimg.com/i/2014-11/parmesan-cheese_625x300_71416560204.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Extra Virgin Olive Oil",
+      "price": 16.99,
+      "image": "http://i2.wp.com/farm4.static.flickr.com/3518/3273222093_3e6d1ef411.jpg?resize%3D500%2C333"
+    },
+    {
+      "id": 7,
+      "name": "Extra Virgin Olive Oil",
+      "price": 16.99
+    }
+  ]
+}

@@ -1,14 +1,53 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useEffect} from 'react';
+import {Text, View, ScrollView, ImageBackground} from 'react-native';
+import {connect} from 'react-redux';
 
-const HomeScreen = () => {
+import Ingredient, {IngredientProps} from '../../components/ingredient';
+
+import {fetchRecipe} from '../../store/actions/recipe.actions';
+import styles from './styles';
+
+interface Props {
+  fetchRecipe: () => {
+    ingredients: Array<IngredientProps>;
+  };
+  recipe: {
+    recipe: string;
+    coverPhotoUri: string;
+    ingredients: Array<IngredientProps>;
+  };
+}
+
+const HomeScreen: React.FC<Props> = ({
+  fetchRecipe: doFetchRecipe,
+  recipe: recipe,
+}) => {
+  useEffect(() => {
+    doFetchRecipe();
+  }, [doFetchRecipe]);
   return (
-    <View>
-      <Text>Home</Text>
+    <View style={styles.container}>
+      <ImageBackground
+        source={{uri: recipe.coverPhotoUri}}
+        style={styles.coverPhoto}>
+        <View style={styles.recipeTitleContainer}>
+          <Text style={styles.recipeTitle}>{recipe.recipe}</Text>
+        </View>
+      </ImageBackground>
+      <ScrollView contentContainerStyle={{}}>
+        <View style={styles.ingredientsContainer}>
+          {recipe.ingredients.map((ingredient: IngredientProps) => (
+            <Ingredient key={ingredient.id} {...ingredient} />
+          ))}
+        </View>
+      </ScrollView>
     </View>
   );
 };
 
-export default HomeScreen;
+const mapStateToProps = ({recipe}: Props) => ({
+  recipe,
+});
 
-const styles = StyleSheet.create({});
+// @ts-ignore
+export default connect(mapStateToProps, {fetchRecipe})(HomeScreen);
