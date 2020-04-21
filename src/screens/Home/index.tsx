@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
-import {Text, View, ScrollView, ImageBackground} from 'react-native';
+import {Text, View, ScrollView, ImageBackground, Button} from 'react-native';
 import {connect} from 'react-redux';
+import {useNavigation} from '@react-navigation/native';
 
 import Ingredient, {IngredientProps} from '../../components/ingredient';
 
@@ -15,16 +16,27 @@ interface Props {
     recipe: string;
     coverPhotoUri: string;
     ingredients: Array<IngredientProps>;
+    navigation: any;
   };
 }
 
 const HomeScreen: React.FC<Props> = ({
   fetchRecipe: doFetchRecipe,
-  recipe: recipe,
+  recipe,
+  navigation,
 }) => {
   useEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <Button
+          title="Checkout"
+          onPress={() => navigation.navigate('Checkout')}
+        />
+      ),
+    });
     doFetchRecipe();
   }, [doFetchRecipe]);
+
   return (
     <View style={styles.container}>
       <ImageBackground

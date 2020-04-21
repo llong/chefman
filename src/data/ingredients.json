@@ -34,14 +34,15 @@
     },
     {
       "id": 6,
-      "name": "Extra Virgin Olive Oil",
-      "price": 16.99,
-      "image": "http://i2.wp.com/farm4.static.flickr.com/3518/3273222093_3e6d1ef411.jpg?resize%3D500%2C333"
+      "name": "Basil",
+      "price": 4.99,
+      "image": "https://media.fromthegrapevine.com/assets/images/2015/5/basil-leaves-spices-0501.jpg.480x0_q71_crop-scale.jpg"
     },
     {
       "id": 7,
-      "name": "Extra Virgin Olive Oil",
-      "price": 16.99
+      "name": "Tomato Sauce",
+      "price": 5.99,
+      "image": "https://i5.walmartimages.com/asr/eb500d3a-7f29-44ea-ad7e-19572bf7dbd2_1.2417bbe8eb80a5d68159326b05735baf.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF"
     }
   ]
 }

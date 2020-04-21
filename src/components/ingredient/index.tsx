@@ -1,6 +1,11 @@
 import React from 'react';
 import {Text, View, ImageBackground} from 'react-native';
+import {connect} from 'react-redux';
 import Icon from 'react-native-vector-icons/EvilIcons';
+import {
+  addItemToCart,
+  removeItemFromCart,
+} from '../../store/actions/shoppingCart.actions';
 
 Icon.loadFont();
 
@@ -12,10 +17,25 @@ export type IngredientProps = {
   backgroundImage: string;
   price: number;
   image: string;
+  quantity?: number | undefined;
+  addItemToCart: any;
+  removeItemFromCart: any;
+  items: Array<IngredientProps>;
 };
 
-const Ingredient: React.SFC<IngredientProps> = ({name, price, image}) => {
-  const [quantity, setQuantity] = React.useState(0);
+const Ingredient: React.SFC<IngredientProps> = ({
+  image,
+  name,
+  price,
+  id,
+  addItemToCart: doAddItemToCart,
+  removeItemFromCart: doRemoveItemFromCart,
+  items,
+}) => {
+  const getQuantity = () => {
+    const item = items.find((ingredient) => ingredient.id === id);
+    return item?.quantity || 0;
+  };
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -31,17 +51,23 @@ const Ingredient: React.SFC<IngredientProps> = ({name, price, image}) => {
         <Icon
           name="minus"
           size={40}
-          onPress={() => (quantity > 0 ? setQuantity(quantity - 1) : null)}
+          onPress={() => doRemoveItemFromCart({name, image, price, id})}
         />
-        <Text style={styles.quantityLabel}>{quantity}</Text>
+        <Text style={styles.quantityLabel}>{getQuantity()}</Text>
         <Icon
           name="plus"
           size={40}
-          onPress={() => quantity < 10 && setQuantity(quantity + 1)}
+          onPress={() => doAddItemToCart({name, image, price, id})}
         />
       </View>
     </View>
   );
 };
 
-export default Ingredient;
+const mapStateTopProps = (state: any) => ({
+  items: state.shoppingCart.items,
+});
+
+export default connect(mapStateTopProps, {addItemToCart, removeItemFromCart})(
+  Ingredient,
+);
