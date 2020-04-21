@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, View, ScrollView} from 'react-native';
+import {Text, View, ScrollView, Alert} from 'react-native';
 import {connect} from 'react-redux';
 
 import Button from 'components/Button';
@@ -94,7 +94,9 @@ const CheckoutScreen: React.SFC = ({cart}) => {
             <Text style={styles.shoppingCartTotal}>
               Your total: ${shoppingCartTotal}
             </Text>
-            <Button>Checkout</Button>
+            <Button onPress={() => alert("Your order is on it's way!")}>
+              Checkout
+            </Button>
           </View>
         )}
       </View>
