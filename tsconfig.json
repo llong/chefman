@@ -10,7 +10,14 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "tests": ["tests/*"],
+      "components/*": ["src/components/*"],
+      "store/*": ["src/store/*"],
+      "app/*": ["src/*"]
+    }
   },
   "exclude": [
     "node_modules",

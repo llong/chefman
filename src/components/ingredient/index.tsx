@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/EvilIcons';
 import {
   addItemToCart,
   removeItemFromCart,
-} from '../../store/actions/shoppingCart.actions';
+} from 'store/actions/shoppingCart.actions';
 
 Icon.loadFont();
 

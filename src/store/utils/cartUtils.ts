@@ -1,4 +1,4 @@
-import {IngredientProps} from '../../components/ingredient';
+import {IngredientProps} from 'components/ingredient';
 
 export const addItemToCart = (
   cartItems: Array<IngredientProps>,

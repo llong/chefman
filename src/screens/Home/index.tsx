@@ -1,11 +1,10 @@
 import React, {useEffect} from 'react';
 import {Text, View, ScrollView, ImageBackground, Button} from 'react-native';
 import {connect} from 'react-redux';
-import {useNavigation} from '@react-navigation/native';
 
-import Ingredient, {IngredientProps} from '../../components/ingredient';
+import Ingredient, {IngredientProps} from 'components/ingredient';
 
-import {fetchRecipe} from '../../store/actions/recipe.actions';
+import {fetchRecipe} from 'store/actions/recipe.actions';
 import styles from './styles';
 
 interface Props {
@@ -16,8 +15,8 @@ interface Props {
     recipe: string;
     coverPhotoUri: string;
     ingredients: Array<IngredientProps>;
-    navigation: any;
   };
+  navigation: any;
 }
 
 const HomeScreen: React.FC<Props> = ({

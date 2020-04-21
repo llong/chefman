@@ -2,10 +2,9 @@ import React, {useState} from 'react';
 import {Text, View, ScrollView} from 'react-native';
 import {connect} from 'react-redux';
 
-import Button from '../../components/Button';
-
+import Button from 'components/Button';
 import styles from './styles';
-import {IngredientProps} from '../../components/ingredient';
+import {IngredientProps} from 'components/ingredient';
 
 const CheckoutScreen: React.SFC = ({cart}) => {
   const [store, setStore] = useState('publix');

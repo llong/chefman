@@ -1,4 +1,4 @@
-import {IngredientProps} from '../../components/ingredient';
+import {IngredientProps} from 'components/ingredient';
 import shoppingCartTypes from '../types/shoppingCart.types';
 
 export const addItemToCart = (payload: IngredientProps) => ({

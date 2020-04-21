@@ -1,7 +1,7 @@
-import recipeTypes from '../types/recipe.types';
+import recipeTypes from 'store/types/recipe.types';
 import recipeData from '../../data/ingredients.json';
 
-import {Action} from '../../types/actions.types';
+import {Action} from 'app/types/actions.types';
 
 // Simulate fetching Recipe data
 export const fetchRecipe = () => {
